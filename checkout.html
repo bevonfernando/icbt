@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Ogani Template">
+    <meta name="keywords" content="Ogani, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Appointment</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+    <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+    <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+    <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+    <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+</head>
+<script>
+    // Check if the user is logged in
+    function checkLogin() {
+        var username = sessionStorage.getItem('userName');
+        if (!username) {
+            window.location.href = '/.html'; // Redirect to login page
+        }
+    }
+</script>
+
+<body>
+
+    <!-- Humberger Begin -->
+    <div class="humberger__menu__overlay"></div>
+    <div class="humberger__menu__wrapper">
+        <div class="humberger__menu__logo">
+            <a href="#"><img src="img/logo.png" alt=""></a>
+        </div>
+        <div class="humberger__menu__widget">
+            <div class="header__top__right__language">
+                <img src="img/language.png" alt="">
+            </div>
+            <div class="header__top__right__auth">
+                <a href="#"><i class="fa fa-user"></i> Login</a>
+            </div>
+        </div>
+        <nav class="humberger__menu__nav mobile-menu">
+            <ul>
+                <li class="active"><a href="./index.html">Home</a></li>
+                <li><a href="./shop-grid.html">Shop</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </nav>
+        <div id="mobile-menu-wrap"></div>
+    </div>
+    <!-- Humberger End -->
+
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="header__logo" style="margin-top: 10px;">
+                        <a href="./index.html">
+                            <h4 style="font-weight: bold;">Appointment</h4>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <nav class="header__menu">
+                        <ul>
+                            <li><a href="./index.html">Home</a></li>
+                            <li class="active"><a href="./shop.html">Appointment</a></li>
+                            <li><a href="./contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-3">
+                    <div class="header__cart">
+                    </div>
+                </div>
+            </div>
+            <div class="humberger__open">
+                <i class="fa fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+
+    <!-- Breadcrumb Section Begin -->
+    <section class="breadcrumb-section bg-dark">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <div class="breadcrumb__text">
+                        <h2>Book</h2>
+                        <div class="breadcrumb__option">
+                            <a href="./index.html">Home</a>
+                            <span>Book</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Breadcrumb Section End -->
+
+    <!-- Checkout Section Begin -->
+    <section class="checkout spad">
+        <div class="container">
+            <div class="row">
+            </div>
+            <div class="checkout__form">
+                <h4>Booking Details</h4>
+                <div class="row">
+                    <div class="col-lg-12 col-md-6">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Customer Name<span>*</span></p>
+                                    <input type="text" id="input1" required>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="checkout__input">
+                                    <p>Consultant Name<span>*</span></p>
+                                    <input type="text" id="input2" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Book Date<span>*</span></p>
+                            <input type="date" id="input3" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Time<span>*</span></p>
+                            <input type="text" placeholder="Time" class="checkout__input__add" id="input4" required>
+                        </div>
+                        <div class="checkout__input">
+                            <p>Contact Number<span>*</span></p>
+                            <input type="text" id="input5" placeholder="Contact Number" required>
+                        </div>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="">
+                            <button onclick="save()" class="site-btn">Book Appointment</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Checkout Section End -->
+
+
+     <!-- Footer Section Begin -->
+     !-- Start Newsletter Area -->
+     <div class="pn-newsletter-area">
+       <div class="pn-news-bg">
+         <div class="test-overly"></div>
+         <div class="container">
+           <div class="row">
+             <div class="col-md-12 col-sm-12 col-xs-12">
+               <div class="pn-newsletter-text">
+                 <div class="pn-news-text text-center">
+                   <h2>Our Newsletter</h2>
+                   <p>Subscribe our newsletter</p>
+                   <div class="subs-feilds">
+                     <div class="subscribe-input">
+                       <input type="email" class="email form-control width-80" id="sus_email" placeholder="Email">
+                       <button type="submit" id="sus_submit" class="add-btn width-20">Subscribe</button>
+                       <div id="msg_Submit" class="h3 text-center hidden"></div>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+     <!-- End Newsletter Area -->
+     
+     <style>
+         /*------- Newsletter Css start ------*/
+     .pn-newsletter-area {
+       background: rgba(248, 248, 248, 0.8) url("https://whistling.in/images/website/hbg_hdsound.jpg");
+       background-size: cover;
+       background-position: center top;
+       background-repeat: no-repeat;
+       background-attachment: fixed;
+     }
+     
+     .pn-news-bg {
+       position: relative;
+     }
+     
+     .pn-newsletter-text {
+       margin: 70px 0;
+       padding: 30px 40px;
+     }
+     
+     .pn-news-text> h2 {
+       color: #fff;
+       font-size: 44px;
+       font-weight: 500;
+       line-height: 50px;
+     }
+     
+     .pn-news-text p {
+       font-size: 18px;
+       color: #fff;
+     }
+     
+     .pn-newsletter-text .section-headline p {
+       margin-bottom: 0;
+     }
+     
+     .subs-feilds {
+       border: 1px solid #fff;
+       display: inline-block;
+       height: 52px;
+       margin-top: 30px;
+       width: 60%;
+       border-radius: 30px;
+       overflow: hidden;
+     }
+     
+     .subscribe-input input {
+       background: transparent none repeat scroll 0 0;
+       border: medium none;
+       color: #fff;
+       float: left;
+       font-size: 15px;
+       line-height: 2px;
+       padding: 11px 15px;
+       width: 80%;
+       height: 50px;
+     }
+     
+     .subscribe-input button {
+       background: #3ec1d5 none repeat scroll 0 0;
+       border: medium none;
+       border-radius: 0 20px 20px 0;
+       color: #fff;
+       float: left;
+       font-size: 16px;
+       font-weight: 700;
+       padding: 10px 20px;
+       width: 20%;
+     }
+     
+     .subscribe-input button:hover {
+       background: #fff none repeat scroll 0 0;
+       color: #3ec1d5;
+     }
+     
+     
+     .test-overly {
+       background: rgba(0, 0, 0, 0.80);
+       position: absolute;
+       width: 100%;
+       height: 100%;
+     }
+     </style>
+     
+     
+     
+     
+       <!-- Site footer -->
+         <footer class="site-footer">
+           <div class="container">
+             <div class="row">
+               <div class="col-sm-12 col-md-6">
+                 <h6>About</h6>
+                 <p class="text-justify">Scanfcode.com <i>CODE WANTS TO BE SIMPLE </i> is an initiative  to help the upcoming programmers with the code. Scanfcode focuses on providing the most efficient code or snippets as the code wants to be simple. We will help programmers build up concepts in different programming languages that include C, C++, Java, HTML, CSS, Bootstrap, JavaScript, PHP, Android, SQL and Algorithm.</p>
+               </div>
+     
+               <div class="col-xs-6 col-md-3">
+                 <h6>Categories</h6>
+                 <ul class="footer-links">
+                   <li><a href="http://scanfcode.com/category/c-language/">C</a></li>
+                   <li><a href="http://scanfcode.com/category/front-end-development/">UI Design</a></li>
+                   <li><a href="http://scanfcode.com/category/back-end-development/">PHP</a></li>
+                   <li><a href="http://scanfcode.com/category/java-programming-language/">Java</a></li>
+                   <li><a href="http://scanfcode.com/category/android/">Android</a></li>
+                   <li><a href="http://scanfcode.com/category/templates/">Templates</a></li>
+                 </ul>
+               </div>
+     
+               <div class="col-xs-6 col-md-3">
+                 <h6>Quick Links</h6>
+                 <ul class="footer-links">
+                   <li><a href="http://scanfcode.com/about/">About Us</a></li>
+                   <li><a href="http://scanfcode.com/contact/">Contact Us</a></li>
+                   <li><a href="http://scanfcode.com/contribute-at-scanfcode/">Contribute</a></li>
+                   <li><a href="http://scanfcode.com/privacy-policy/">Privacy Policy</a></li>
+                   <li><a href="http://scanfcode.com/sitemap/">Sitemap</a></li>
+                 </ul>
+               </div>
+             </div>
+             <hr>
+           </div>
+           <div class="container">
+             <div class="row">
+               <div class="col-md-8 col-sm-6 col-xs-12">
+                 <p class="copyright-text">Copyright &copy; 2017 All Rights Reserved by 
+              <a href="#">Scanfcode</a>.
+                 </p>
+               </div>
+     
+               <div class="col-md-4 col-sm-6 col-xs-12">
+                 <ul class="social-icons">
+                   <li><a class="facebook" href="#"><i class="fa fa-facebook"></i></a></li>
+                   <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                   <li><a class="dribbble" href="#"><i class="fa fa-dribbble"></i></a></li>
+                   <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li>   
+                 </ul>
+               </div>
+             </div>
+           </div>
+     </footer>
+     
+     <style>
+         .site-footer
+     {
+       background-color:#26272b;
+       padding:45px 0 20px;
+       font-size:15px;
+       line-height:24px;
+       color:#737373;
+     }
+     .site-footer hr
+     {
+       border-top-color:#bbb;
+       opacity:0.5
+     }
+     .site-footer hr.small
+     {
+       margin:20px 0
+     }
+     .site-footer h6
+     {
+       color:#fff;
+       font-size:16px;
+       text-transform:uppercase;
+       margin-top:5px;
+       letter-spacing:2px
+     }
+     .site-footer a
+     {
+       color:#737373;
+     }
+     .site-footer a:hover
+     {
+       color:#3366cc;
+       text-decoration:none;
+     }
+     .footer-links
+     {
+       padding-left:0;
+       list-style:none
+     }
+     .footer-links li
+     {
+       display:block
+     }
+     .footer-links a
+     {
+       color:#737373
+     }
+     .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+     {
+       color:#3366cc;
+       text-decoration:none;
+     }
+     .footer-links.inline li
+     {
+       display:inline-block
+     }
+     .site-footer .social-icons
+     {
+       text-align:right
+     }
+     .site-footer .social-icons a
+     {
+       width:40px;
+       height:40px;
+       line-height:40px;
+       margin-left:6px;
+       margin-right:0;
+       border-radius:100%;
+       background-color:#33353d
+     }
+     .copyright-text
+     {
+       margin:0
+     }
+     @media (max-width:991px)
+     {
+       .site-footer [class^=col-]
+       {
+         margin-bottom:30px
+       }
+     }
+     @media (max-width:767px)
+     {
+       .site-footer
+       {
+         padding-bottom:0
+       }
+       .site-footer .copyright-text,.site-footer .social-icons
+       {
+         text-align:center
+       }
+     }
+     .social-icons
+     {
+       padding-left:0;
+       margin-bottom:0;
+       list-style:none
+     }
+     .social-icons li
+     {
+       display:inline-block;
+       margin-bottom:4px
+     }
+     .social-icons li.title
+     {
+       margin-right:15px;
+       text-transform:uppercase;
+       color:#96a2b2;
+       font-weight:700;
+       font-size:13px
+     }
+     .social-icons a{
+       background-color:#eceeef;
+       color:#818a91;
+       font-size:16px;
+       display:inline-block;
+       line-height:44px;
+       width:44px;
+       height:44px;
+       text-align:center;
+       margin-right:8px;
+       border-radius:100%;
+       -webkit-transition:all .2s linear;
+       -o-transition:all .2s linear;
+       transition:all .2s linear
+     }
+     .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+     {
+       color:#fff;
+       background-color:#29aafe
+     }
+     .social-icons.size-sm a
+     {
+       line-height:34px;
+       height:34px;
+       width:34px;
+       font-size:14px
+     }
+     .social-icons a.facebook:hover
+     {
+       background-color:#3b5998
+     }
+     .social-icons a.twitter:hover
+     {
+       background-color:#00aced
+     }
+     .social-icons a.linkedin:hover
+     {
+       background-color:#007bb6
+     }
+     .social-icons a.dribbble:hover
+     {
+       background-color:#ea4c89
+     }
+     @media (max-width:767px)
+     {
+       .social-icons li.title
+       {
+         display:block;
+         margin-right:0;
+         font-weight:600
+       }
+     }
+     </style>
+     
+    <!-- Footer Section End -->
+
+
+    <script>
+        window.onload = function () {
+            var urlParams = new URLSearchParams(window.location.search);
+            var c_name = urlParams.get('name');
+
+            if (c_name) {
+                // Store the name in session storage
+                sessionStorage.setItem('name', c_name);
+                console.log(c_name);
+
+                // Populate the input field with the c_name value
+                var nameInput = document.getElementById('input2');
+                if (nameInput) {
+                    nameInput.value = c_name;
+                }
+            }
+
+            const storedUserName = sessionStorage.getItem("userName");
+
+            // Check if the stored username exists
+            if (storedUserName) {
+                // Set the stored username as the value of the input field
+                document.getElementById("input1").value = storedUserName;
+            }
+        }
+
+
+        const dateInput = document.getElementById('input3');
+
+        // Function to set the minimum date to today's date
+        function setMinDate() {
+            const today = new Date();
+            const day = today.getDate().toString().padStart(2, '0');
+            const month = (today.getMonth() + 1).toString().padStart(2, '0');
+            const year = today.getFullYear();
+            const minDate = `${year}-${month}-${day}`;
+            dateInput.setAttribute('min', minDate);
+        }
+
+        // Call the function to set the minimum date initially
+        setMinDate();
+
+        // Add an event listener to update the minimum date if the input is focused
+        dateInput.addEventListener('focus', setMinDate);
+
+
+
+        function save() {
+            let u_name = $("#input1").val();
+            let c_name = $("#input2").val();
+            let book_date = $("#input3").val();
+            let time = $("#input4").val();
+            let contact = $("#input5").val();
+
+            $.ajax({
+                method: "POST",
+                contentType: "application/json",
+                url: "http://localhost:8080/api/v1/appoinment/saveappoinment",
+                async: true,
+                data: JSON.stringify({
+                    u_name: u_name,
+                    c_name: c_name,
+                    book_date: book_date,
+                    time: time,
+                    contact: contact,
+                }),
+                success: function (data) {
+                    alert("Appointment Added Successfully");
+                    window.location.href = '?refresh=true';
+                },
+                error: function (xhr, exception) {
+                    alert("Error");
+                },
+            });
+        }
+    </script>
+
+
+
+    <!-- Js Plugins -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery-ui.min.js"></script>
+    <script src="js/jquery.slicknav.js"></script>
+    <script src="js/mixitup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+
+
+
+</body>
+
+</html>
